@@ -1,0 +1,66 @@
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using OficinaCardozo.Infrastructure.Data;
+using System;
+using System.IO;
+
+namespace OficinaCardozo.Infrastructure.Factories
+{
+    /// <summary>
+    /// Fábrica para criar instâncias de OficinaDbContext em tempo de design (ex: para criar migrações).
+    /// </summary>
+    public class OficinaDbContextFactory : IDesignTimeDbContextFactory<OficinaDbContext>
+    {
+        public OficinaDbContext CreateDbContext(string[] args)
+        {
+            string environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+            Console.WriteLine($"[OficinaDbContextFactory] Ambiente detectado: {environment}");
+
+            string apiProjectPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "OficinaCardozo.API");
+
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(apiProjectPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{environment}.json", optional: true)
+                .AddUserSecrets<OficinaDbContextFactory>() 
+                .AddEnvironmentVariables()
+                .Build();
+
+            var optionsBuilder = new DbContextOptionsBuilder<OficinaDbContext>();
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new InvalidOperationException("A string de conexão 'DefaultConnection' não foi encontrada.");
+            }
+
+            if (environment == "Development")
+            {
+                Console.WriteLine("[OficinaDbContextFactory] Configurando para SQL Server...");
+                var userId = configuration["DatabaseCredentials:UserId"];
+                var password = configuration["DatabaseCredentials:Password"];
+
+                if (!string.IsNullOrEmpty(userId) && !string.IsNullOrEmpty(password))
+                {
+                    var csBuilder = new SqlConnectionStringBuilder(connectionString);
+                    csBuilder.UserID = userId;
+                    csBuilder.Password = password;
+                    connectionString = csBuilder.ConnectionString;
+                }
+
+                optionsBuilder.UseSqlServer(connectionString,
+                    sqlOptions => sqlOptions.MigrationsAssembly(typeof(OficinaDbContext).Assembly.FullName));
+            }
+            else
+            {
+                Console.WriteLine("[OficinaDbContextFactory] Configurando para SQLite...");
+                optionsBuilder.UseSqlite(connectionString,
+                    sqliteOptions => sqliteOptions.MigrationsAssembly(typeof(OficinaDbContext).Assembly.FullName));
+            }
+
+            return new OficinaDbContext(optionsBuilder.Options);
+        }
+    }
+}
