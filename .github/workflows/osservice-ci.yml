@@ -52,16 +52,16 @@ jobs:
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
 
     - name: Restore, Build & Test
-        run: |
-          dotnet restore OficinaCardozo.OSService.API/OficinaCardozo.OSService.API.csproj --verbosity minimal
-          dotnet restore OficinaCardozo.OSService.Infrastructure/OficinaCardozo.OSService.Infrastructure.csproj --verbosity minimal
-          dotnet restore OficinaCardozo.OSService.Application/OficinaCardozo.OSService.Application.csproj --verbosity minimal
-          dotnet restore OficinaCardozo.OSService.Domain/OficinaCardozo.OSService.Domain.csproj --verbosity minimal
-          dotnet build OficinaCardozo.OSService.API/OficinaCardozo.OSService.API.csproj --no-restore --configuration Release --verbosity minimal
-          dotnet build OficinaCardozo.OSService.Infrastructure/OficinaCardozo.OSService.Infrastructure.csproj --no-restore --configuration Release --verbosity minimal
-          dotnet build OficinaCardozo.OSService.Application/OficinaCardozo.OSService.Application.csproj --no-restore --configuration Release --verbosity minimal
-          dotnet build OficinaCardozo.OSService.Domain/OficinaCardozo.OSService.Domain.csproj --no-restore --configuration Release --verbosity minimal
-          # dotnet test OficinaCardozo.OSService.Tests/OficinaCardozo.OSService.Tests.csproj --no-build --configuration Release --verbosity minimal --logger "console;verbosity=minimal"
+      run: |
+        dotnet restore OficinaCardozo.OSService.API/OficinaCardozo.OSService.API.csproj --verbosity minimal
+        dotnet restore OficinaCardozo.OSService.Infrastructure/OficinaCardozo.OSService.Infrastructure.csproj --verbosity minimal
+        dotnet restore OficinaCardozo.OSService.Application/OficinaCardozo.OSService.Application.csproj --verbosity minimal
+        dotnet restore OficinaCardozo.OSService.Domain/OficinaCardozo.OSService.Domain.csproj --verbosity minimal
+        dotnet build OficinaCardozo.OSService.API/OficinaCardozo.OSService.API.csproj --no-restore --configuration Release --verbosity minimal
+        dotnet build OficinaCardozo.OSService.Infrastructure/OficinaCardozo.OSService.Infrastructure.csproj --no-restore --configuration Release --verbosity minimal
+        dotnet build OficinaCardozo.OSService.Application/OficinaCardozo.OSService.Application.csproj --no-restore --configuration Release --verbosity minimal
+        dotnet build OficinaCardozo.OSService.Domain/OficinaCardozo.OSService.Domain.csproj --no-restore --configuration Release --verbosity minimal
+        # dotnet test OficinaCardozo.OSService.Tests/OficinaCardozo.OSService.Tests.csproj --no-build --configuration Release --verbosity minimal --logger "console;verbosity=minimal"
 
     - name: Docker login
       if: env.DEPLOY_ENABLED == 'true'
