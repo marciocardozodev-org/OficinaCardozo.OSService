@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OficinaCardozo.OSService.Application</name>
+    </assembly>
+    <members>
+        <member name="T:OficinaCardozo.OSService.Application.DTOs.OrdemServicoPecaDto">
+            <summary>
+            DTO para representar a relação entre Ordem de Serviço e Peças
+            </summary>
+        </member>
+        <member name="T:OficinaCardozo.OSService.Application.DTOs.OrdemServicoServicoDto">
+            <summary>
+            DTO para representar a relação entre Ordem de Serviço e Serviços
+            </summary>
+        </member>
+    </members>
+</doc>

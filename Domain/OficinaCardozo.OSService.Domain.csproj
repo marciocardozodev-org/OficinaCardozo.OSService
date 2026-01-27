@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>OficinaCardozo.OSService.Domain</AssemblyName>
+    <RootNamespace>OficinaCardozo.OSService.Domain</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Entities\**\*.cs" />
+    <Compile Include="Exceptions\**\*.cs" />
+    <Compile Include="Interfaces\**\*.cs" />
+    <Compile Include="ValueObjects\**\*.cs" />
+    <Compile Remove="Cliente.cs" />
+    <Compile Remove="OrdemServico.cs" />
+    <Compile Remove="OrdemServicoPeca.cs" />
+    <Compile Remove="OrdemServicoServico.cs" />
+    <Compile Remove="OrdemServicoStatus.cs" />
+    <Compile Remove="Veiculo.cs" />
+  </ItemGroup>
+</Project>

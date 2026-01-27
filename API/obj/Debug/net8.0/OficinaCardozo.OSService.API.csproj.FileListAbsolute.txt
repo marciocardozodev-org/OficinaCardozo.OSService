@@ -1,0 +1,7 @@
+/workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.csproj.AssemblyReference.cache
+/workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.AssemblyInfoInputs.cache
+/workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.AssemblyInfo.cs
+/workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.csproj.CoreCompileInputs.cache
+/workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.MvcApplicationPartsAssemblyInfo.cs
+/workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.MvcApplicationPartsAssemblyInfo.cache

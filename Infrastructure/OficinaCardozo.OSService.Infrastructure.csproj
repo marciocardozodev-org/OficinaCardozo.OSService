@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>OficinaCardozo.OSService.Infrastructure</AssemblyName>
+    <RootNamespace>OficinaCardozo.OSService.Infrastructure</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Domain/OficinaCardozo.OSService.Domain.csproj" />
+    <ProjectReference Include="../Application/OficinaCardozo.OSService.Application.csproj" />
+  </ItemGroup>
+</Project>
