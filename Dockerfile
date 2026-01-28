@@ -15,20 +15,20 @@ ENV DOTNET_CLI_TELEMETRY_OPTOUT=1
 ENV NUGET_XMLDOC_MODE=skip
 
 # CACHE LAYER 1: Copiar apenas arquivos de projeto (muda raramente)
-COPY ["OficinaCardozo.OSService.API/OficinaCardozo.OSService.API.csproj", "OficinaCardozo.OSService.API/"]
-COPY ["Application/OficinaCardozo.Application.csproj", "Application/"]
-COPY ["Domain/OficinaCardozo.Domain.csproj", "Domain/"]
-COPY ["Infrastructure/OficinaCardozo.Infrastructure.csproj", "Infrastructure/"]
+COPY ["API/OficinaCardozo.OSService.API.csproj", "API/"]
+COPY ["Application/OficinaCardozo.OSService.Application.csproj", "Application/"]
+COPY ["Domain/OficinaCardozo.OSService.Domain.csproj", "Domain/"]
+COPY ["Infrastructure/OficinaCardozo.OSService.Infrastructure.csproj", "Infrastructure/"]
 
 # CACHE LAYER 2: Restore (só refaz se .csproj mudar)
-RUN dotnet restore "OficinaCardozo.OSService.API/OficinaCardozo.OSService.API.csproj" --verbosity minimal
+RUN dotnet restore "API/OficinaCardozo.OSService.API.csproj" --verbosity minimal
 
 # CACHE LAYER 3: Copiar código fonte (muda com frequência)
 COPY . .
 
 # CACHE LAYER 4: Build e Publish (sem --no-restore para evitar NETSDK1064)
 WORKDIR "/src"
-RUN dotnet publish "OficinaCardozo.OSService.API/OficinaCardozo.OSService.API.csproj" \
+RUN dotnet publish "API/OficinaCardozo.OSService.API.csproj" \
 	-c Release \
 	-o /app/publish \
 	--verbosity minimal \
