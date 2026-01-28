@@ -16,3 +16,4 @@
 /workspaces/OficinaCardozo.OSService/Application/obj/Debug/net8.0/OficinaCardozo.OSService.Application.xml
 /workspaces/OficinaCardozo.OSService/Application/obj/Debug/net8.0/OficinaCardozo.OSService.Application.pdb
 /workspaces/OficinaCardozo.OSService/Application/obj/Debug/net8.0/ref/OficinaCardozo.OSService.Application.dll
+/workspaces/OficinaCardozo.OSService/Application/obj/Debug/net8.0/OficinaCardozo.OSService.Application.sourcelink.json

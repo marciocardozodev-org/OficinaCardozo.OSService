@@ -12,19 +12,25 @@ namespace OficinaCardozo.OSService.Application.Services;
 
 public class OrdemServicoService : IOrdemServicoService
 {
-	// Exemplo de dependências
-	public OrdemServicoService() {}
+    public OrdemServicoService() {}
 
-	public async Task<OrdemServicoDto> CriarOrdemServicoAsync(CreateOrdemServicoDto createDto)
-	{
-		// ...persistência e lógica de negócio...
-		return new OrdemServicoDto();
-	}
+    public async Task<OrdemServicoDto> CriarOrdemServicoAsync(CreateOrdemServicoDto createDto) => new();
+    public async Task<IEnumerable<OrdemServicoDto>> ObterTodosAsync() => new List<OrdemServicoDto>();
+    public async Task<IEnumerable<OrdemServicoDto>> GetAllAtivasAsync() => new List<OrdemServicoDto>();
+    public async Task<IEnumerable<OrdemServicoDto>> GetAllAsync() => new List<OrdemServicoDto>();
+    public async Task<OrdemServicoDto> CreateOrdemServicoComOrcamentoAsync(CreateOrdemServicoDto createDto) => new();
+    public async Task<OrdemServicoDto> GetByIdAsync(int id) => new();
 
-	public async Task<IEnumerable<OrdemServicoDto>> ObterTodosAsync()
-	{
-		// ...busca e mapeamento...
-		return new List<OrdemServicoDto>();
-	}
-	// ...outros métodos do contrato...
+    public async Task<IEnumerable<OrcamentoDto>> GetAllOrcamentosAsync() => new List<OrcamentoDto>();
+    public async Task<OrcamentoResumoDto> IniciarDiagnosticoAsync(int id) => new();
+    public async Task<OrcamentoResumoDto> EnviarOrcamentoParaAprovacaoAsync(EnviarOrcamentoParaAprovacaoDto dto) => new();
+    public async Task<OrcamentoResumoDto> FinalizarDiagnosticoAsync(int id) => new();
+    public async Task<OrcamentoResumoDto> AprovarOrcamentoAsync(AprovarOrcamentoDto dto) => new();
+    public async Task<OrdemServicoDto> IniciarExecucaoAsync(int id) => new();
+    public async Task<OrdemServicoDto> FinalizarServicoAsync(int id) => new();
+    public async Task<OrdemServicoDto> EntregarVeiculoAsync(int id) => new();
+    public async Task<OrdemServicoDto> CancelarOrdemServicoAsync(CancelarOrdemServicoDto dto) => new();
+    public async Task<OrdemServicoDto> DevolverVeiculoSemServicoAsync(int id, string motivo) => new();
+    public async Task<TempoMedioExecucaoDto> ObterTempoMedioExecucaoAsync(FiltroTempoMedioDto? filtro = null) => new();
+    public async Task<ResumoTempoExecucaoDto> ObterResumoTempoExecucaoAsync() => new();
 }

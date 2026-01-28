@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OficinaCardozo.OSService.Domain;
 using OficinaCardozo.OSService.Domain.Interfaces.Repositories;
+using OficinaCardozo.OSService.Domain.Entities;
 using OficinaCardozo.OSService.Infrastructure.Data;
 using System.Globalization;
 using System.Text;

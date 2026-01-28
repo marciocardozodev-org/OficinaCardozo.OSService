@@ -1,0 +1,33 @@
+# .gitignore para OficinaCardozo.OSService
+# Build e artefatos do .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+# Arquivos de log
+*.log
+# Configurações locais
+appsettings.Development.json
+appsettings.Local.json
+# Arquivos temporários
+*.tmp
+*.temp
+# Diretórios de publicação
+publish/
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+# Arquivos de backup
+*.bak
+# Arquivos de IDE
+.vscode/
+.idea/
+# Docker
+*.pid
+# Outros
+*.swp
+*.swn
+*.swo

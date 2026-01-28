@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OficinaCardozo.OSService.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45f3ca29fe72a8da740927a35afe0f44962e6de1")]
 [assembly: System.Reflection.AssemblyProductAttribute("OficinaCardozo.OSService.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OficinaCardozo.OSService.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
