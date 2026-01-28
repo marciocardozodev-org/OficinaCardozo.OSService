@@ -1,7 +1,7 @@
 # .gitignore para OficinaCardozo.OSService
 # Build e artefatos do .NET
-bin/
-obj/
+**/bin/
+**/obj/
 *.user
 *.suo
 *.userosscache
@@ -16,7 +16,7 @@ appsettings.Local.json
 *.tmp
 *.temp
 # Diretórios de publicação
-publish/
+**/publish/
 # Arquivos do sistema operacional
 .DS_Store
 Thumbs.db
