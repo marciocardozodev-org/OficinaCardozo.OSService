@@ -21,14 +21,21 @@ public class ServicoService : IServicoService
 	public async Task<ServicoDto> CriarServicoAsync(CreateServicoDto createDto)
 	{
 		var servico = _mapper.MapearParaEntidade(createDto);
-		// ...persistência e lógica de negócio...
 		return _mapper.MapearParaDto(servico);
 	}
 
 	public async Task<IEnumerable<ServicoDto>> ObterTodosAsync()
 	{
-		// ...busca e mapeamento...
 		return new List<ServicoDto>();
 	}
-	// ...outros métodos do contrato...
+
+	public async Task<IEnumerable<ServicoDto>> GetAllAsync()
+	{
+		return new List<ServicoDto>();
+	}
+
+	public async Task<ServicoDto> CreateAsync(CreateServicoDto createDto)
+	{
+		return new ServicoDto();
+	}
 }

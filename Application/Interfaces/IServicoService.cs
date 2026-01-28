@@ -8,4 +8,7 @@ public interface IServicoService
 {
     Task<ServicoDto> CriarServicoAsync(CreateServicoDto createDto);
     Task<IEnumerable<ServicoDto>> ObterTodosAsync();
+    Task<IEnumerable<ServicoDto>> GetAllAsync();
+    Task<ServicoDto> CreateAsync(CreateServicoDto createDto);
+    // Adicione outros métodos conforme necessário
 }

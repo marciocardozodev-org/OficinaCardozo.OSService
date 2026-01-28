@@ -8,4 +8,6 @@ public interface IClienteService
 {
     Task<ClienteDto> CriarClienteAsync(CreateClienteDto createDto);
     Task<IEnumerable<ClienteDto>> ObterTodosAsync();
+    Task<IEnumerable<ClienteDto>> ObterTodosClientesAsync();
+    // Adicione outros métodos conforme necessário
 }

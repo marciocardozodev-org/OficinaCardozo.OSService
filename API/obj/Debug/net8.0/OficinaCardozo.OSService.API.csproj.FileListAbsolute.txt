@@ -5,3 +5,4 @@
 /workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.csproj.CoreCompileInputs.cache
 /workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.MvcApplicationPartsAssemblyInfo.cs
 /workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.MvcApplicationPartsAssemblyInfo.cache
+/workspaces/OficinaCardozo.OSService/API/obj/Debug/net8.0/OficinaCardozo.OSService.API.sourcelink.json

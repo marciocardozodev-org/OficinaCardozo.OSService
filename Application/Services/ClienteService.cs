@@ -20,16 +20,17 @@ public class ClienteService : IClienteService
 
 	public async Task<ClienteDto> CriarClienteAsync(CreateClienteDto createDto)
 	{
-		// Exemplo de uso do ValueObject e Exception
 		var cliente = _mapper.MapearParaEntidade(createDto);
-		// ...persistência e lógica de negócio...
 		return _mapper.MapearParaDto(cliente);
 	}
 
 	public async Task<IEnumerable<ClienteDto>> ObterTodosAsync()
 	{
-		// ...busca e mapeamento...
 		return new List<ClienteDto>();
 	}
-	// ...outros métodos do contrato...
+
+	public async Task<IEnumerable<ClienteDto>> ObterTodosClientesAsync()
+	{
+		return new List<ClienteDto>();
+	}
 }
