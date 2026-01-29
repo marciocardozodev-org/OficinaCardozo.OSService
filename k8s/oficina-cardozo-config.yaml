@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oficina-cardozo-config
+  labels:
+    app: oficina-cardozo-osservice-api
+# Adicione aqui as configurações necessárias para o serviço
+# data:
+#   CHAVE: valor
