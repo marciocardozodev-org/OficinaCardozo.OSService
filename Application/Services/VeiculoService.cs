@@ -21,14 +21,21 @@ public class VeiculoService : IVeiculoService
 	public async Task<VeiculoDto> CriarVeiculoAsync(CreateVeiculoDto createDto)
 	{
 		var veiculo = _mapper.MapearParaEntidade(createDto);
-		// ...persistência e lógica de negócio...
 		return _mapper.MapearParaDto(veiculo);
 	}
 
 	public async Task<IEnumerable<VeiculoDto>> ObterTodosAsync()
 	{
-		// ...busca e mapeamento...
 		return new List<VeiculoDto>();
 	}
-	// ...outros métodos do contrato...
+
+	public async Task<VeiculoDto> GetByPlacaAsync(string placa)
+	{
+		return new VeiculoDto();
+	}
+
+	public async Task<VeiculoDto> CreateAsync(CreateVeiculoDto createDto)
+	{
+		return new VeiculoDto();
+	}
 }

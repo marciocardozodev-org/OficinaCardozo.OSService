@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OficinaCardozo.OSService.Domain;
+using OficinaCardozo.OSService.Domain.Entities;
 
 namespace OficinaCardozo.OSService.Infrastructure.Data
 {

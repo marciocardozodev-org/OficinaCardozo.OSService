@@ -2,6 +2,8 @@
 
 Microserviço responsável pelo gerenciamento das Ordens de Serviço, Clientes e Veículos.
 
+# Alteração forçada para validação do fluxo de PR
+
 ## Estrutura Inicial
 - Domain
 - Application

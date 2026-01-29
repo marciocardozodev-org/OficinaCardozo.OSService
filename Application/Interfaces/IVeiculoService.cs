@@ -8,4 +8,7 @@ public interface IVeiculoService
 {
     Task<VeiculoDto> CriarVeiculoAsync(CreateVeiculoDto createDto);
     Task<IEnumerable<VeiculoDto>> ObterTodosAsync();
+    Task<VeiculoDto> GetByPlacaAsync(string placa);
+    Task<VeiculoDto> CreateAsync(CreateVeiculoDto createDto);
+    // Adicione outros métodos conforme necessário
 }
