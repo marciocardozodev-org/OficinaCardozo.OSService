@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oficina-cardozo-osservice-api
+  labels:
+    app: oficina-cardozo-osservice-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oficina-cardozo-osservice-api
+  template:
+    metadata:
+      labels:
+        app: oficina-cardozo-osservice-api
+      annotations:
+        ad.datadoghq.com/api.logs: '[{"source":"csharp","service":"oficina-cardozo-osservice-api"}]'
+    spec:
+      containers:
+        - name: api
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: DATADOG_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: datadog-secret
+                  key: api_key
+            - name: DATADOG_API_KEY_AGENT
+              valueFrom:
+                secretKeyRef:
+                  name: datadog-agent
+                  key: api-key
+            - name: DATADOG_SITE
+              value: us5.datadoghq.com
+          image: marciocardozodev/oficinacardozo-osservice-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
