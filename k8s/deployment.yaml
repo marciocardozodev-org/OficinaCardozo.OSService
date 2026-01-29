@@ -35,6 +35,13 @@ spec:
                   key: api-key
             - name: DATADOG_SITE
               value: us5.datadoghq.com
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
           image: marciocardozodev/oficinacardozo-osservice-api:latest
           imagePullPolicy: Always
           ports:
