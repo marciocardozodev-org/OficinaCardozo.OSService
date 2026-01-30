@@ -35,6 +35,26 @@ spec:
                   key: api-key
             - name: DATADOG_SITE
               value: us5.datadoghq.com
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: osservice-db-secret
+                  key: DB_HOST
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: osservice-db-secret
+                  key: DB_NAME
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: osservice-db-secret
+                  key: DB_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: osservice-db-secret
+                  key: DB_PASSWORD
           resources:
             requests:
               cpu: 50m
